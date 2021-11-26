@@ -7,3 +7,14 @@ n
 )
 
 ; Iterative Function
+
+(define (g n)
+(if (< n 3)
+n
+(g-iter 3 n 0 1 2)))
+
+(define (g-iter current goal a b c)
+(if (= current goal) 
+(+ a b c)
+(g-iter (+ current 1) goal b c (+ a b c)))
+)
