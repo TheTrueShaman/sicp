@@ -11,8 +11,8 @@
 
 (define (square x) (* x x))
 
-(define (good-enough? guess next-guess)
-  (< (abs (- (square guess) next-guess)) 0.001))
+(define (good-enough? previous-guess guess)
+  (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
 
 (define (sqrt x)
   (sqrt-iter 1.0 x))
