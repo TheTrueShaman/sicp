@@ -4,3 +4,4 @@ We know that Fib(n) = Fib(n-1) + Fib(n-2). We also know that Fib(n) = (phi^n - p
 We can apply the function to all terms in the first sequence and get:
 (phi^n - psi^n)/sqrt(5) = (phi^(n-1) - psi^(n-1))/sqrt(5) + (phi^(n-2) - psi^(n-2))/sqrt(5)
 
+$\frac{2}{5}$
