@@ -1,8 +1,45 @@
 Goal: Prove that Fib(n) is the closest integer to (phi^n)/5.
 
-We know that Fib(n) = Fib(n-1) + Fib(n-2). We also know that Fib(n) = (phi^n - psi^n)/sqrt(5).
+We can start by proving that Fib(n) = (phi^n-psi^n)/sqrt(5).
+
+
+Let us assume that Fib(n) = (phi^n - psi^n)/sqrt(5).
+We know that Fib(n) = Fib(n-1) + Fib(n-2). 
 We can apply the function to all terms in the first sequence and get:
 (phi^n - psi^n)/sqrt(5) = (phi^(n-1) - psi^(n-1))/sqrt(5) + (phi^(n-2) - psi^(n-2))/sqrt(5)
 
 Because everything is divided by sqrt(5), we can multiply both sides by sqrt(5) to get:
 (phi^n - psi^n) = (phi^(n-1) - psi^(n-1)) + (phi^(n-2) - psi^(n-2))
+
+Then, to get every term to either be phi^n or psi^n, we can do the following:
+(phi^n - psi^n) = (phi^n/phi - psi^n/psi) + (phi^n/phi^2 - psi^n/psi^2)
+
+We can then factor this into:
+phi^n - psi^n = phi^n * (1/phi + 1/phi^2) - psi^n * (1/psi + 1/psi^2)
+
+We can then apply the definition of psi and phi to the terms in the parentheses:
+phi = (1+sqrt(5))/2)
+psi = (1-sqrt(5))/2)
+phi^n - psi^n = phi^n * (1/(1+sqrt(5))/2 + 1/((1+sqrt(5))/2)^2) - psi^n * (1/(1-sqrt(5))/2 + 1/((1-sqrt(5))/2)^2)
+
+We can then simplify:
+phi^n - psi^n = phi^n * (2/(1+sqrt(5)) + 4/(1+sqrt(5))^2) - psi^n * (2/(1-sqrt(5)) + 4/(1-sqrt(5))^2)
+
+We can now put the terms in the parentheses over the same denominator and simplify:
+phi^n - psi^n = phi^n * (2*(1+sqrt(5))/(1+sqrt(5))^2) + 4/(1+sqrt(5))^2) - psi^n * (2*(1-sqrt(5))/(1-sqrt(5))^2 + 4/(1-sqrt(5))^2)
+
+phi^n - psi^n = phi^n * ((2*(1+sqrt(5))+4)/(1+sqrt(5))^2) - psi^n * ((2*(1-sqrt(5))+4)/(1-sqrt(5))^2)
+
+phi^n - psi^n = phi^n * (2+2*sqrt(5)+4)/(1+2*sqrt(5)+5) - psi^n * (2-2*sqrt(5)+4)/(1-2*sqrt(5)+5)
+
+phi^n - psi^n = phi^n * (6+2*sqrt(5))/(6+2*sqrt(5)) - psi^n * (6+2*sqrt(5))/(6+2*sqrt(5))
+
+phi^n - psi^n = phi^n - psi^n
+
+Therefore Fib(n) = (phi^n-psi^n)/sqrt(5).
+
+
+Next, we have to notice that since -1 < psi < 0 then -1 < psi^n < 1, and because sqrt(5) > 2, we have:
+-1/2 < -1/sqrt(5) < psi^n/sqrt(5) < 1/sqrt(5) < 1/2
+
+
