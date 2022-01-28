@@ -42,4 +42,13 @@ Therefore Fib(n) = (phi^n-psi^n)/sqrt(5).
 Next, we have to notice that since -1 < psi < 0 then -1 < psi^n < 1, and because sqrt(5) > 2, we have:
 -1/2 < -1/sqrt(5) < psi^n/sqrt(5) < 1/sqrt(5) < 1/2
 
+Now we can write Fib(n) as:
+Fib(n) = (phi^n - psi^n)/sqrt(5) = phi^n/sqrt(5) - psi^n/sqrt(5)
 
+We can rewrite this as:
+phi^n/sqrt(5) = Fib(n) + psi^n/sqrt(5)
+
+We can then add Fib(n) to each side of the inequality -1/2 < psi^n/sqrt(5) < 1/2 to get:
+Fib(n) - 1/2 < phi^n/sqrt(5) < Fib(n) + 1/2
+
+Therefore, Fib(n) is the closest integer to phi^n/sqrt(5).
