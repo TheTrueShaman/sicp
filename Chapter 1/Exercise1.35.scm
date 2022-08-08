@@ -11,6 +11,6 @@
   (try first-guess))
 
 (define (golden-ratio x)
-  (fixed-point (lambda (y) (+ 1 (/ 1 x))) x))
+  (fixed-point (lambda (y) (+ 1 (/ 1 y))) x))
 
 (golden-ratio 20)
