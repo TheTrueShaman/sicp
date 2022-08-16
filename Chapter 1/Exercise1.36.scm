@@ -15,4 +15,4 @@
 (display (fixed-point (lambda (x) (/ (log 1000) (log x))) 2)) (newline)
 
 ;This is with damping. It takes 10 steps to complete. In this case, damping is useful and increases speed of convergance.
-(display (fixed-point (lambda (x) (/ (log 1000) (log x))) 2)) (newline)
+(display (fixed-point (lambda (x) (average x (/ (log 1000) (log x)))) 2)) (newline)
