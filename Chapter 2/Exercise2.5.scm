@@ -1,0 +1,21 @@
+(define (cons x y)
+  (* (expt 2 x) (expt 3 y)))
+
+(define (car x)
+  (define (car-iter x count)
+  (if (= 0 (modulo x 2))
+      (car-iter (/ x 2) (+ 1 count))
+      count))
+  (car-iter x 0))
+
+(define (cdr x)
+  (define (cdr-iter x count)
+  (if (= 0 (modulo x 3))
+      (cdr-iter (/ x 3) (+ 1 count))
+      count))
+  (cdr-iter x 0))
+
+(define x (cons 5 7))
+(display (car x))
+(newline)
+(display (cdr x))
